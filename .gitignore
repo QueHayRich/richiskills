@@ -1,0 +1,9 @@
+# Workspaces de pruebas generados por skill-creator
+*-workspace/
+
+# Logs y archivos temporales
+*.log
+.DS_Store
+
+# Archivos de lecciones aprendidas (son locales, no del repo)
+lessons_learned.md

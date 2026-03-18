@@ -1,0 +1,46 @@
+{
+  "skill_name": "scientific-article-reviewer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Necesito que revises este artículo de química computacional para una revista indexada en JCR. Aquí está el PDF: [paper_dft.pdf]. Empieza el análisis completo.",
+      "expected_output": "Internal review report with all sections: title/abstract, introduction, methodology (with DFT-specific criteria: software version, functional, basis set, convergence criteria), results/figures, discussion, citation verification (attempt to verify all references via WebSearch), and a recommendation with justification. Should ask if editor report is needed before generating it.",
+      "files": [],
+      "assertions": [
+        "The review identifies the study type as computational",
+        "The review checks for DFT-specific methodological details (functional, basis set, software version)",
+        "At least one citation verification search is performed via WebSearch",
+        "The output contains the structured internal summary with the recommendation scale",
+        "The review asks the user before generating the editor report",
+        "Suspicious or unverified citations are explicitly flagged"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Me llegó este artículo de revisión sistemática sobre inhibidores enzimáticos y necesito hacer peer review. Aquí está el documento: [systematic_review.pdf]. Necesito el reporte para el editor en inglés cuando termines.",
+      "expected_output": "Review applies PRISMA checklist (auto-detected as systematic review). Evaluates PRISMA flow diagram, search strategy reproducibility, risk of bias assessment, heterogeneity analysis. Produces internal summary, then asks about editor format — or proceeds to generate editor format since the user already requested it. Editor report in English using the generic template.",
+      "files": [],
+      "assertions": [
+        "PRISMA guideline is detected and applied automatically",
+        "The review checks for a PRISMA flow diagram",
+        "The review evaluates the search strategy reproducibility",
+        "The review assesses risk of bias methodology",
+        "The editor report is produced in English",
+        "The editor report includes confidential Comments to the Editor and Comments to the Authors sections"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Tengo que revisar urgentemente este paper de bioquímica. Me preocupa que algunas citas no existen. Por favor verifica todas las referencias con especial cuidado. El paper está aquí: [biochemistry_paper.pdf]",
+      "expected_output": "Performs comprehensive citation verification: searches each reference via WebSearch using DOI or author+year+title queries. Classifies references as Verified/Unverified/Suspicious. Explicitly lists all suspicious/unverified ones. Also conducts full paper review. Internal summary prominently features citation verification results.",
+      "files": [],
+      "assertions": [
+        "WebSearch is called multiple times for citation verification",
+        "References are classified into verified/unverified/suspicious categories",
+        "Suspicious or unverified references are listed with specific details",
+        "The citation verification section is prominently featured in the summary",
+        "The review covers methodology and figures in addition to citations"
+      ]
+    }
+  ]
+}
