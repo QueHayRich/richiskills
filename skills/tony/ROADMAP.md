@@ -1,8 +1,8 @@
 # Tony — Asistente de Modelado Molecular In Silico — Roadmap
 
-## Estado actual: Borrador v1 (2026-03-18)
+## Estado actual: v1.1 (2026-03-18)
 
-Tony tiene la estructura base y el conocimiento general definido, pero falta agregar protocolos específicos, scripts y documentos de referencia.
+Tony tiene la estructura base, el conocimiento general definido, y una bibliografía curada de 78 referencias (30 libros + 48 papers seminales). Falta agregar protocolos específicos, scripts y obtener los materiales de referencia.
 
 ---
 
@@ -14,6 +14,7 @@ Tony tiene la estructura base y el conocimiento general definido, pero falta agr
 - Adapta comandos al SO del usuario (Ubuntu/macOS/Windows)
 - Prioriza flujos de trabajo por CLI (sin GUI)
 - Guarda lecciones aprendidas en `~/.claude/tony/lessons_learned.md`
+- Cuenta con bibliografía curada en `references/bibliography.md` (78 entradas verificadas)
 
 ## Software soportado
 
@@ -22,6 +23,10 @@ GROMACS, AutoDock/Vina, UCSF Chimera, VMD, PyMOL, OpenMM, MDAnalysis, AlphaFold,
 ---
 
 ## Pendientes prioritarios
+
+### Bibliografía de referencia
+- [x] Compilar bibliografía curada de libros y papers seminales → `references/bibliography.md` (78 entradas: 30 libros de Wiley/Springer/Elsevier/Oxford UP/Cambridge UP + 48 papers de revistas JCR/Scopus)
+- [ ] Obtener los materiales (libros y papers) para usarlos como base de conocimiento de Tony
 
 ### Protocolos de referencia (agregar a `references/`)
 - [ ] Protocolo estándar de docking con AutoDock Vina (CLI completo)
@@ -95,4 +100,5 @@ Todo esto debería poder orquestarse con un solo script maestro.
 - Prioriza software gratuito siempre; puede mencionar alternativas comerciales (Schrödinger, MOE) como referencia pero no las recomienda por defecto
 - Los scripts deben ser autocontenidos: encabezado con propósito, dependencias, y cómo ejecutar
 - Las lecciones aprendidas se guardan en `~/.claude/tony/lessons_learned.md`, NO en el repo (son personales)
-- Las `references/` y `scripts/` se irán poblando iterativamente conforme se vayan creando y validando
+- Las `references/` ya contiene `bibliography.md`; se irá poblando con protocolos conforme se obtengan y validen los materiales
+- Los `scripts/` se irán creando iterativamente conforme se desarrollen y prueben
